@@ -44,6 +44,7 @@ async def show_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("💬 聊天权限设置", callback_data="set_whitelist")],
         [InlineKeyboardButton("⏱ 冷却时间设置", callback_data="set_cooldown")],
         [InlineKeyboardButton("❌ 关闭", callback_data="close")],
+        [InlineKeyboardButton("💬 设置触发词", callback_data="set_triggers")],
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
@@ -270,3 +271,4 @@ async def save_cooldown_custom(update: Update, context: ContextTypes.DEFAULT_TYP
     except ValueError:
         await update.message.reply_text("❌ 请输入纯数字")
         return SET_COOLDOWN
+
